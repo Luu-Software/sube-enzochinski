@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SUBE registrada</title>
+    <title>SUBE - Cuadro Tarifario Oficial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,23 +15,37 @@
   </head>
   <body>
     <header><img src="img/logo_sube.svg" alt="logo sube" /></header>
-    <h1 class="lora-bold">Cuadro Tarifario</h1>
+    <h1 class="lora-bold">Cuadro Tarifario Oficial</h1>
+    
     <form class="montserrat-regular">
-      <label for="registrada">¿La tarjeta SUBE está registrada?</label>
+      <!-- 1. Tipo de Tarjeta (Ahora con Tarifa Social) -->
+      <label for="registrada">Estado de la tarjeta / Beneficio</label>
       <select class="montserrat-regular" id="registrada">
-        <option value="si">Sí</option>
-        <option value="no">No</option>
+        <option value="si">SUBE Registrada</option>
+        <option value="no">SUBE Sin Registrar</option>
+        <option value="social">Tarifa Social (55% desc.)</option>
       </select>
-      <label for="distancia">Km a recorrer</label>
+
+      <!-- 2. Jurisdicción (Consigna Manija) -->
+      <label for="jurisdiccion">Jurisdicción</label>
+      <select class="montserrat-regular" id="jurisdiccion">
+        <option value="amba">CABA y Nacionales (1-199)</option>
+        <option value="pba">Provinciales y Municipales</option>
+      </select>
+
+      <!-- 3. Distancia -->
+      <label for="distancia">Kilómetros a recorrer</label>
       <input
         class="montserrat-regular"
         type="number"
         min="0"
         id="distancia"
-        placeholder="Ingrese los km"
+        placeholder="Ej: 5.5"
       />
-      <div class="boton montserrat-regular" id="boton">Calcular tarifa</div>
+
+      <div class="boton montserrat-regular" id="boton">Calcular Tarifa</div>
     </form>
-    <p class="resultado montserrat-regular" id="tarifa">(Tarifa)</p>
+
+    <p class="resultado montserrat-regular" id="tarifa">(Esperando datos...)</p>
   </body>
 </html>
